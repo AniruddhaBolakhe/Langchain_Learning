@@ -1,0 +1,77 @@
+LangChain-Fundamentals,RAG,Agents
+LangChain-0.3 version we are learning
+Open Source to use and develop LLM
+
+Searching : KeyWord Search ,  Semantic Search
+NLU:Natural Language Understanding
+Context Aware Text Generation Capability 
+
+How Semantic Search works: so their is a query and answers so the answers are converted to embeddings(n dims vectors{set of numbers}) Embeddings methods like [Word2Vec , Doc2vec , BERT] and the query is also converted to vector using embedding then consine similarity is found to see if the closest angle(gives the most similar meaning answer)
+getting answers from LLM are called inference
+
+Langchain provides built-in functionality
+concepts of chains(pipelines)
+model agnostic development(irrespective of any model)
+Complete Ecosystem
+Memory and state handling
+
+Alternatives to Langchain:LlamaIndex and HayStack
+
+Components of LangChain
+1.Models
+2.Prompts
+3.chains
+4.Memory
+5.Indexes
+6.Memory
+7.Agents
+
+Models
+interface to interact with AI
+LLM API
+
+in LangChain we can talk to 2 Types
+1.Language Models: text->LLM->text    (Chat MOdels)
+2.Embedding Models: text->LLM->vector (use:Semantic Search) (Embedding Models)
+
+
+Prompts
+Prompt engineering
+input to llm are prompts
+
+1.Dynamic and Resuable Prompts
+2.Role Based Prompts(system prompts and user prompts)
+3.Few Shot Prompting( give it examples and what type of result to expect)
+
+
+chains
+help to build pipelines
+previous output is automatically the input of next stage
+
+types of chains
+1.Parallel chain
+2.Conditional chain
+
+Indexes
+They Connect your application to external Knowledge: pdf , websites ,  Databases
+
+1.Document Loaders
+2.Text Splitters
+3.Vector Store 
+4.Retreivers
+
+Memory
+LLM calls are stateless
+
+Types of Memory
+
+ConversationBufferMemory: Stores a transcript of recent messages. Great for short chats but can grow large quickly.
+ConversationBufferWindowMemory: Only keeps the last N interactions to avoid excessive token usage.
+Summarizer-Based Memory: Periodically summarizes older chat segments to keep a condensed memory footprint.
+Custom Memory: For advanced use cases, you can store specialized state (e.g., the user's preferences or key facts about them) in a custom memory class.
+
+Agents
+
+LLM with tools calls( they do the work rather than only giving information)
+they have resoning Capability
+using Chain-of-thought prompting 

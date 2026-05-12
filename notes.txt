@@ -1,0 +1,7 @@
+Foundational Models:Genralized Large Models(high parameters and high data):LLM + LMMs
+
+USER_PERSPECTIVE:Prompt engineering,RAG,AI agents,Vector Databases,Fine-Tuning-(LLM's, HuggingFace, LLM API, LangChain, Ollama , Promt engineering , RAG , Fine-Tuning ,AI agents , Langgraph , LLMOps , CrewAI , MultiModels)
+
+BUILDER_PERSPECTIVE:RLHF,Pretraining,Quantization,Fine-Tuning-(Transformer Architecture,Types of Transformers[Encoder only{BERT} , Decoder only{GPT} , Encoder and Decoder Based{T5}] , Pretraining(training objectives , Tokenization stratergies , training stratergies , handling challenges)
+ , Optimization(training Optimization , model compression , optimizing inference e.g.{Quantization , Knowledge distillation}) , Fine-Tuning[Task specific tuning{RLHF} , instruction tuning{PEFT} , Continual Pretraining] , Evaluation[LLM LeaderBoard] , Deployment )
+
