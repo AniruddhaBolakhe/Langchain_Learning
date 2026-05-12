@@ -23,16 +23,68 @@ Components of LangChain
 3.chains
 4.Memory
 5.Indexes
-6.Memory
-7.Agents
+6.Agents
 
 Models
 interface to interact with AI
 LLM API
 
 in LangChain we can talk to 2 Types
-1.Language Models: text->LLM->text    (Chat MOdels)
+1.Language Models: text->LLM->text    (Chat Models)
 2.Embedding Models: text->LLM->vector (use:Semantic Search) (Embedding Models)
+closed source models:OpenAI and Antropic and Google deep mind
+open source models:By HuggingFace
+
+Language Models are of two types
+1.LLM : General Purpose  models
+2.Chat Models : Used for conversational tasks
+
+
+LLMs (Large Language Models)
+----------------------------
+General-purpose models used for raw text generation.
+They take a string (plain text) as input and return a string (plain text) as output.
+These are traditionally older models and are not used much now.
+
+Chat Models
+------------
+Language models specialized for conversational tasks.
+They take a sequence of messages as input and return chat messages as output
+(instead of using plain text).
+
+These are traditionally newer models and are used more compared to basic LLMs.
+
+
+Comparison: LLMs vs Chat Models
+================================
+
+1. Purpose
+   - LLMs: Free-form text generation
+   - Chat Models: Optimized for multi-turn conversations
+
+2. Training Data
+   - LLMs: General text corpora (books, articles)
+   - Chat Models: Fine-tuned on chat datasets
+     (dialogues, user-assistant conversations)
+
+3. Memory & Context
+   - LLMs: No built-in memory
+   - Chat Models: Supports structured conversation history
+
+4. Role Awareness
+   - LLMs: No understanding of "user" and "assistant" roles
+   - Chat Models: Understands "system", "user", and "assistant" roles
+
+5. Example Models
+   - LLMs: GPT-3, Llama-2-7B, Mistral-7B, OPT-1.3B
+   - Chat Models: GPT-4, GPT-3.5-turbo, Llama-2-Chat,
+                  Mistral-Instruct, Claude
+
+6. Use Cases
+   - LLMs: Text generation, summarization, translation,
+            creative writing, code generation
+   - Chat Models: Conversational AI, chatbots, virtual assistants,
+                   customer support, AI tutors
 
 
 Prompts
