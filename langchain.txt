@@ -31,7 +31,7 @@ LLM API
 
 in LangChain we can talk to 2 Types
 1.Language Models: text->LLM->text    (Chat Models)
-2.Embedding Models: text->LLM->vector (use:Semantic Search) (Embedding Models)
+2.Embedding Models: text->LLM->vector (use:Semantic Search) (Embedding Models) in openai in text-embedding-small model the max dims is 1536 and for text-embedding-large model the max dims is 3072
 closed source models:OpenAI and Antropic and Google deep mind
 open source models:By HuggingFace
 
@@ -86,6 +86,52 @@ Comparison: LLMs vs Chat Models
    - Chat Models: Conversational AI, chatbots, virtual assistants,
                    customer support, AI tutors
 
+Open-source language models are freely available AI models that can be downloaded, modified,
+fine-tuned, and deployed without restrictions from a central provider. Unlike closed-source
+models such as OpenAI's GPT-4, Anthropic's Claude, or Google's Gemini, open-source models
+allow full control and customization.
+ 
+---
+ 
+Feature          | Open-Source Models                              | Closed-Source Models
+-----------------|-------------------------------------------------|--------------------------------------
+Cost             | Free to use (no API costs)                      | Paid API usage (e.g., OpenAI charges per token)
+Control          | Can modify, fine-tune, and deploy anywhere      | Locked to provider's infrastructure
+Data Privacy     | Runs locally (no data sent to external servers) | Sends queries to provider's servers
+Customization    | Can fine-tune on specific datasets              | No access to fine-tuning in most cases
+Deployment       | Can be deployed on on-premise servers or cloud  | Must use vendor's API
+ 
+---
+ 
+Some Famous Open Source Models
+ 
+Model            | Developer   | Parameters  | Best Use Case
+-----------------|-------------|-------------|----------------------------------------------
+LLaMA-2-7B/13B/70B | Meta AI  | 7B - 70B    | General-purpose text generation
+Mixtral-8x7B     | Mistral AI  | 8x7B (MoE)  | Efficient & fast responses
+Mistral-7B       | Mistral AI  | 7B          | Best small-scale model (outperforms LLaMA-2-13B)
+Falcon-7B/40B    | TII UAE     | 7B - 40B    | High-speed inference
+BLOOM-176B       | BigScience  | 176B        | Multilingual text generation
+GPT-J-6B         | EleutherAI  | 6B          | Lightweight and efficient
+GPT-NeoX-20B     | EleutherAI  | 20B         | Large-scale applications
+StableLM         | Stability AI| 3B - 7B     | Compact models for chatbots
+
+HuggingFace is the largest repositories of open-source LLM's
+two ways to use it
+1.Running locally
+2.Using HF inference API
+
+Disadvantages
+
+Disadvantage               | Details
+---------------------------|------------------------------------------------------------------------
+High Hardware Requirements | Running large models (e.g., LLaMA-2-70B) requires expensive GPUs.
+Setup Complexity           | Requires installation of dependencies like PyTorch, CUDA, transformers.
+Lack of RLHF               | Most open-source models don't have fine-tuning with human feedback,
+                           | making them weaker in instruction-following.
+Limited Multimodal         | Open models don't support images, audio, or video like GPT-4V.
+Abilities                  |
+
 
 Prompts
 Prompt engineering
@@ -127,3 +173,18 @@ Agents
 LLM with tools calls( they do the work rather than only giving information)
 they have resoning Capability
 using Chain-of-thought prompting 
+
+
+temperature is a parameter that controls the randomness of a language model's output. It affects how creative or deterministic the responses are.
+
+- Lower values ( 0.0 - 0.3 ) -> More deterministic and predictable.
+- Higher values ( 0.7 - 1.5 ) -> More random, creative, and diverse.
+
+---
+
+Use Case                                          | Recommended Temperature
+--------------------------------------------------|------------------------
+Factual answers (math, code, facts)               | 0.0 - 0.3
+Balanced response (general QA, explanations)      | 0.5 - 0.7
+Creative writing, storytelling, jokes             | 0.9 - 1.2
+Maximum randomness (wild ideas, brainstorming)    | 1.5+
