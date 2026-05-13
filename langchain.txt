@@ -137,10 +137,43 @@ Prompts
 Prompt engineering
 input to llm are prompts
 
+prompts are input instructions or queries given to a model to guide its output
+prompts are two types:
+1.text based prompts
+2.multimodal prompts e.g. image,sound,video
+
+static prompt:Where the user has a lot of control:lot of variables
+dynamic prompt: we make a prompt template only key values are given by user
+
+A PromptTemplate in LangChain is a structured way to create prompts dynamically by inserting variables into a predefined template. Instead of hardcoding prompts, PromptTemplate allows you to define placeholders that can be filled in at runtime with different inputs.
+This makes it reusable, flexible, and easy to manage, especially when working with dynamic user inputs or automated workflows.
+Why use PromptTemplate over f strings?
+
+Default validation
+Reusable
+LangChain Ecosystem
+
+
 1.Dynamic and Resuable Prompts
 2.Role Based Prompts(system prompts and user prompts)
 3.Few Shot Prompting( give it examples and what type of result to expect)
 
+
+Model
+└── invoke
+    ├── single message
+    │   (single turn stand alone queries)
+    │   ├── Static Message
+    │   └── Dynamic Message
+    │       (PromptTemplate)
+    │
+    └── list of messages
+        (multi-turn conversation)
+        ├── Static Message
+        │   (System Message, HumanMessage, AIMessage)
+        └── Dynamic Message
+            (ChatPromptTemplate)
+A MessagesPlaceholder in LangChain is a special placeholder used inside a ChatPromptTemplate to dynamically insert chat history or a list of messages at runtime.
 
 chains
 help to build pipelines
@@ -176,7 +209,8 @@ using Chain-of-thought prompting
 
 
 temperature is a parameter that controls the randomness of a language model's output. It affects how creative or deterministic the responses are.
-
+value = 0 for same input we get the same output
+value closer to 2 for same input we get varied different answers
 - Lower values ( 0.0 - 0.3 ) -> More deterministic and predictable.
 - Higher values ( 0.7 - 1.5 ) -> More random, creative, and diverse.
 
