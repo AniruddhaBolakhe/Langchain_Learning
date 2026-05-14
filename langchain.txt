@@ -175,6 +175,33 @@ Model
             (ChatPromptTemplate)
 A MessagesPlaceholder in LangChain is a special placeholder used inside a ChatPromptTemplate to dynamically insert chat history or a list of messages at runtime.
 
+In LangChain, structured output refers to the practice of having language models return responses in a well-defined data format (for example, JSON), rather than free-form text. This makes the model output easier to parse and work with programmatically.
+[Prompt] - Can you create a one-day travel itinerary for Paris?
+[LLM's Unstructured Response]
+Here's a suggested itinerary: Morning: Visit the Eiffel Tower.
+Afternoon: Walk through the Louvre Museum.
+Evening: Enjoy dinner at a Seine riverside café.
+[JSON enforced output]
+json[
+  {"time": "Morning", "activity": "Visit the Eiffel Tower"},
+  {"time": "Afternoon", "activity": "Walk through the Louvre Museum"},
+
+structured output used in data extraction,Agents,API Building
+
+By default give structured output : function called with_structured_output : data format in (Typed Dict,Pydantic,JSON_SCHEMAS)
+By default don't give structured output : function called output_parsers
+
+with_structured_output(method)
+                           /              \
+                          /                \
+                         ↓                  ↓
+          [Claude, Gemini]                (OpenAI)
+                 ↓                            ↓
+           [json mode]               (function calling)
+                 ↓                            ↓
+           json format               function call (Agents)
+                                              ↓
+                                              →
 chains
 help to build pipelines
 previous output is automatically the input of next stage
