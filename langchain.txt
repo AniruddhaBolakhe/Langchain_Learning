@@ -202,13 +202,22 @@ with_structured_output(method)
            json format               function call (Agents)
                                               ↓
                                               →
+
+output_parsers give structured output for any type of llm
+string output parsers 
+json output parsers
+structured output parsers
+pydantic output parsers
+
 chains
 help to build pipelines
-previous output is automatically the input of next stage
+previous output is automatically the input of next stage(pipelines)
 
-types of chains
-1.Parallel chain
-2.Conditional chain
+Types of chains
+1.)Simple chains
+2.)Sequential chains
+3.)Parallel chains
+4.)Conditional chains
 
 Indexes
 They Connect your application to external Knowledge: pdf , websites ,  Databases
